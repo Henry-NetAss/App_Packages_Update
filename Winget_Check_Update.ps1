@@ -5,5 +5,6 @@ Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-
 Write-Host "Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet..."
 Repair-WinGetPackageManager
 Write-Host "Done."
-echo y|winget upgrade --all --silent
+echo y|winget uninstall --ide Windows.DevHome
+echo y|winget upgrade --all --include-unknown --silent
 exit
